@@ -1,0 +1,642 @@
+/* Updated CSS */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+body { 
+  font-family: Arial, sans-serif; 
+  background: #111; 
+  color: #fff; 
+  padding-top: 70px; /* Space for fixed navbar */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background: #222;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.navbar img { 
+  height: 40px; 
+}
+
+.search-bar {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  width: 300px;
+  background: #333;
+  color: white;
+}
+
+.main-content {
+  padding: 20px 5%;
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.movie-card {
+  background: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 15px;
+}
+
+.movie-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.movie-rating {
+  color: gold;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.movie-meta {
+  display: flex;
+  justify-content: space-between;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.featured-movie {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.featured-poster {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.featured-details {
+  padding: 30px;
+}
+
+.featured-title {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.featured-rating {
+  font-size: 24px;
+  color: gold;
+  margin-bottom: 20px;
+}
+
+.featured-description {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.sidebar-title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #333;
+}
+
+.sidebar-movie {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.sidebar-poster {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 4px;
+}
+
+.sidebar-movie-info {
+  flex: 1;
+}
+
+.sidebar-movie-title {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.sidebar-movie-meta {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 30px;
+}
+
+.tag {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.media-type {
+  display: inline-block;
+  background: #e50914;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .content-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .featured-movie {
+    grid-template-columns: 1fr;
+  }
+  
+  .featured-poster {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    width: 200px;
+  }
+  
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .movie-poster {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .search-bar {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .featured-details {
+    padding: 20px;
+  }
+  
+  .featured-title {
+    font-size: 24px;
+  }
+}
+
+/* Player Page Styles */
+.player-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back-button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.back-button:hover {
+  background: #555;
+}
+
+.player-container {
+  background: #222;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.player-details {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.player-details img {
+  width: 200px;
+  border-radius: 4px;
+}
+
+.player-text {
+  flex: 1;
+  color: white;
+}
+
+.server-selector {
+  margin: 20px 0;
+  color: white;
+}
+
+.server-selector select {
+  margin-left: 10px;
+  padding: 5px;
+  background: #333;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 4px;
+}
+
+.loading {
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Pagination Styles */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pagination {
+  display: flex;
+  gap: 5px;
+}
+
+.page-btn {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.page-btn:hover {
+  background: #555;
+}
+
+.page-btn.active {
+  background: #e50914;
+  font-weight: bold;
+}
+
+/* Search Modal Styles */
+.search-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background: #333;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.results {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Styling the scrollbar */
+.results::-webkit-scrollbar {
+  width: 8px;
+}
+
+.results::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.results::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.results::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.search-result {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.search-result:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-result img {
+  width: 60px;
+  height: 90px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 4px;
+}
+
+.search-result-info {
+  flex: 1;
+}
+
+.search-result-info h3 {
+  margin: 0 0 5px 0;
+  color: #fff;
+}
+
+.search-result-info p {
+  margin: 0;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.search-result-rating {
+  color: gold;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.search-loading {
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.search-error {
+  text-align: center;
+  color: #ff4444;
+  padding: 10px;
+  background: rgba(255, 0, 0, 0.1);
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.no-results {
+  text-align: center;
+  color: #aaa;
+  margin-top: 20px;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Add these styles at the end of your CSS file */
+
+.episode-list {
+  margin-top: 20px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.season-selector {
+  margin-bottom: 20px;
+}
+
+.season-selector select {
+  background: #333;
+  color: white;
+  border: 1px solid #444;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 200px;
+}
+
+.episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.episode-card {
+  background: #222;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.episode-card:hover {
+  transform: translateY(-3px);
+  background: #2a2a2a;
+}
+
+.episode-thumbnail {
+  position: relative;
+  height: 169px;
+  background: #333;
+}
+
+.episode-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.episode-placeholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 18px;
+}
+
+.episode-info {
+  padding: 15px;
+}
+
+.episode-info h4 {
+  color: #e50914;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.episode-info h3 {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.episode-info p {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Customize scrollbar for episodes grid */
+.episodes-grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.episodes-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.episodes-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* New styles added */
+
+.video-container {
+  position: relative;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.video-container iframe {
+  display: block;
+  width: 100%;
+  height: 500px;
+}
+
+.episodes-container {
+  margin-top: 20px;
+  padding: 20px;
+  background: #222;
+  border-radius: 8px;
+}
+
+.season-selector {
+  margin: 15px 0;
+}
+
+.season-selector select {
+  padding: 8px;
+  background: #333;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 4px;
+}
+
+.episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.episode-btn {
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.episode-btn:hover {
+  background: #444;
+}
+
+.episode-btn.active {
+  background: #e50914;
+}
